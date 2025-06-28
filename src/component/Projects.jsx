@@ -99,7 +99,7 @@ const Projects = () => {
     };
 
     return (
-        <section className="bg-gradient-to-br from-[#0a192f] to-[#0d2b50] text-gray-300 py-20 px-4">
+        <section id='projects' className="bg-gradient-to-br from-[#0a192f] to-[#0d2b50] text-gray-300 py-20 px-4">
             <div className="container mx-auto">
                 <Fade direction="down" triggerOnce>
                     <h2 className="text-4xl font-bold text-center mb-4 text-white">My Projects</h2>
