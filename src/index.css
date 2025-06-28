@@ -1,0 +1,13 @@
+@import "tailwindcss";
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.2; }
+  50% { transform: scale(1.1); opacity: 0.3; }
+  100% { transform: scale(1); opacity: 0.2; }
+}
+.btn-sm {
+  @apply px-4 py-2 text-sm font-medium rounded-md transition-colors;
+}
+
+.btn-outline-one {
+  @apply border border-teal-500 text-teal-500 hover:bg-teal-500 hover:text-white;
+}
