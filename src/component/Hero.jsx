@@ -1,19 +1,138 @@
 import React, { useState } from 'react';
-import { Fade, Slide } from 'react-awesome-reveal';
+import { motion } from 'framer-motion';
 import { HiDownload, HiPlay } from 'react-icons/hi';
-import { FaFacebook, FaLinkedinIn, FaGithub, FaEnvelope } from 'react-icons/fa';
-import mahin from '../assets/mahin2.jpg'; // Update with your actual image path
+import { FaFacebook, FaLinkedinIn, FaEnvelope } from 'react-icons/fa';
+import mahin from '../assets/mahin2.jpg';
 import { TypeAnimation } from 'react-type-animation';
-
-
+import {
+    FaReact,
+    FaNodeJs,
+    FaGithub,
+    FaHtml5,
+    FaCss3Alt,
+} from "react-icons/fa";
+import {
+    SiMongodb,
+    SiExpress,
+    SiJavascript,
+    SiTypescript,
+    SiTailwindcss,
+} from "react-icons/si";
 const Hero = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const videoId = 'iWuEpnTTD3k';
 
-    const videoId = 'iWuEpnTTD3k'; // Replace with your actual YouTube video ID
+    // Animation variants
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1,
+                delayChildren: 0.3
+            }
+        }
+    };
+
+    const itemVariants = {
+        hidden: { y: 20, opacity: 0 },
+        visible: {
+            y: 0,
+            opacity: 1,
+            transition: {
+                duration: 0.5
+            }
+        }
+    };
+
+    const imageVariants = {
+        hidden: { x: 100, opacity: 0 },
+        visible: {
+            x: 0,
+            opacity: 1,
+            transition: {
+                duration: 0.8,
+                ease: "easeOut"
+            }
+        }
+    };
+
+    const techIcons = [
+        { id: "mongo", icon: <SiMongodb className="text-green-500 w-10 h-10" />, x: "10%", delay: 0 },
+        { id: "express", icon: <SiExpress className="text-gray-400 w-10 h-10" />, x: "25%", delay: 0.3 },
+        { id: "react", icon: <FaReact className="text-blue-400 w-12 h-12" />, x: "40%", delay: 0.6 },
+        { id: "node", icon: <FaNodeJs className="text-green-400 w-12 h-12" />, x: "55%", delay: 0.9 },
+        { id: "js", icon: <SiJavascript className="text-yellow-400 w-10 h-10" />, x: "70%", delay: 1.2 },
+        { id: "ts", icon: <SiTypescript className="text-blue-600 w-10 h-10" />, x: "85%", delay: 1.5 },
+        { id: "github", icon: <FaGithub className="text-white w-10 h-10" />, x: "20%", delay: 1.8 },
+        { id: "html", icon: <FaHtml5 className="text-orange-500 w-10 h-10" />, x: "35%", delay: 2.1 },
+        { id: "css", icon: <FaCss3Alt className="text-blue-500 w-10 h-10" />, x: "65%", delay: 2.4 },
+        { id: "tailwind", icon: <SiTailwindcss className="text-cyan-400 w-10 h-10" />, x: "50%", delay: 2.7 },
+    ];
+
 
     return (
-        <section className="relative bg-gradient-to-br from-[#0a192f] to-[#0d2b50] text-white overflow-hidden py-10 md:py-28 lg:py-36">
-            {/* Top Shapes */}
+        <section className="relative bg-gradient-to-br from-[#0a192f] to-[#0d2b50] text-white py-10 md:py-28 lg:py-36 overflow-hidden">
+            {/* Background shapes */}
+
+            {/* <div className="absolute inset-0 overflow-hidden">
+                {[...Array(6)].map((_, i) => (
+                    <motion.div
+                        key={`shape-${i}`}
+                        className={`absolute rounded-full ${i % 2 === 0 ? 'bg-indigo-500' : 'bg-teal-400'} opacity-20`}
+                        style={{
+                            width: i % 2 === 0 ? '4rem' : '6rem',
+                            height: i % 2 === 0 ? '4rem' : '6rem',
+                            top: `${10 + (i * 15)}%`,
+                            left: `${5 + (i * 10)}%`,
+                            animation: `pulse 6s infinite ${i * 0.5}s`
+                        }}
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        transition={{ duration: 0.5, delay: i * 0.1 }}
+                    />
+                ))}
+                {[...Array(6)].map((_, i) => (
+                    <motion.div
+                        key={`shape-bottom-${i}`}
+                        className={`absolute rounded-full ${i % 2 === 0 ? 'bg-teal-400' : 'bg-indigo-500'} opacity-20`}
+                        style={{
+                            width: i % 2 === 0 ? '5rem' : '7rem',
+                            height: i % 2 === 0 ? '5rem' : '7rem',
+                            bottom: `${5 + (i * 10)}%`,
+                            right: `${5 + (i * 10)}%`,
+                            animation: `pulse 8s infinite ${i * 0.3}s`
+                        }}
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        transition={{ duration: 0.5, delay: i * 0.1 }}
+                    />
+                ))}
+            </div> */}
+
+             <div className="absolute inset-0 overflow-hidden z-0 pointer-events-none">
+      {techIcons.map((tech) => (
+        <motion.div
+          key={tech.id}
+          className="absolute"
+          style={{
+            left: tech.x,
+            top: 0,
+          }}
+          animate={{ y: ["-100px", "80vh"], opacity: [0, 0.5, 0] }}
+          transition={{
+            duration: 6,
+            delay: tech.delay,
+            repeat: Infinity,
+            repeatType: "loop",
+            ease: "easeInOut",
+          }}
+        >
+          {tech.icon}
+        </motion.div>
+      ))}
+    </div>
+
             <div className="absolute top-0 left-0 w-full flex justify-between">
                 {[...Array(3)].map((_, i) => (
                     <div
@@ -27,7 +146,6 @@ const Hero = () => {
                 ))}
             </div>
 
-            {/* Bottom Shapes */}
             <div className="absolute bottom-0 right-0 w-full flex justify-between">
                 {[...Array(3)].map((_, i) => (
                     <div
@@ -41,151 +159,171 @@ const Hero = () => {
                 ))}
             </div>
 
-            <div className="container mx-auto px-4">
-                <div className="flex flex-col lg:flex-row items-center justify-center ">
+
+            <div className="container mx-auto px-4  ">
+                <div className="flex flex-col lg:flex-row items-center justify-between">
                     {/* Left Content */}
-                    <div className="  lg:w-9/12  ">
-                        <Fade direction="left" cascade damping={0.1} triggerOnce>
+                    <motion.div
+                        className=" "
+                        initial="hidden"
+                        animate="visible"
+                        variants={containerVariants}
+                    >
+                        <motion.div variants={itemVariants}>
                             <h3 className="text-xl md:text-2xl font-light text-teal-400 mb-2">
                                 Hello! I'm
                             </h3>
-                            <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6">
+                        </motion.div>
+
+                        <motion.div variants={itemVariants}>
+                            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
                                 Afjal <span className="text-teal-400">Hossain</span>
                             </h2>
+                        </motion.div>
 
-                            {/* <div className="w-full mb-8">
-                                <img
-                                    src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=500&size=26&pause=1000&center=true&vCenter=true&width=800&lines=Hello,There!👋;This is Afjal Hossain;A+Passionate MERN Developer;Nice+to+meet+you!"
-                                    alt="Typing SVG"
-                                    className="w-full h-auto max-w-2xl mx-auto"
-                                />
-                            </div> */}
-                            <div className="text-2xl md:text-3xl font-mono text-center  md:h-20 mb-8 lg:mb-0 lg:ml-24 w-80 lg:w-96 text-purple-200">
-                                <TypeAnimation
-                                    sequence={[
-                                        'Hello,There!👋 ',
-                                        1000,
-                                        'This is Afjal Hossain',
-                                        1000,
-                                        'MERN Stack Developer',
-                                        1000,
-                                        'Frontend Specialist',
-                                        1000,
-                                        'React Enthusiast',
-                                        1000,
+                        <motion.div
+                            className="text-2xl md:text-3xl font-mono text-center  md:h-20 mb-8 lg:mb-0 lg:ml-24 w-80 lg:w-96 text-purple-200"
+                            variants={itemVariants}
+                        >
+                            <TypeAnimation
+                                sequence={[
+                                    'Hello,There!👋 ',
+                                    1000,
+                                    'This is Afjal Hossain',
+                                    1000,
+                                    'MERN Stack Developer',
+                                    1000,
+                                    'Frontend Specialist',
+                                    1000,
+                                    'React Enthusiast',
+                                    1000,
+                                ]}
+                                wrapper="span"
+                                cursor={true}
+                                repeat={Infinity}
+                                style={{
+                                    display: 'inline-block',
+                                    color: '#36BCF7'
+                                }}
+                            />
+                        </motion.div>
 
-                                    ]}
-                                    wrapper="span"
-                                    cursor={true}
-                                    repeat={Infinity}
-                                    style={{
-                                        display: 'inline-block',
-                                        color: '#36BCF7'
-                                    }}
-                                />
-                            </div>
+                        <motion.div
+                            className="flex flex-col sm:flex-row items-center gap-4 mb-10"
+                            variants={itemVariants}
+                        >
+                            <a
+                                href="#"
+                                className="flex items-center gap-2 bg-transparent border-2 border-teal-400 text-teal-400 hover:bg-teal-400 hover:text-white transition-all duration-300 py-3 px-6 rounded-lg font-medium"
+                            >
+                                <HiDownload className="text-xl" />
+                                Get Resume
+                            </a>
 
-                            <div className="flex flex-col sm:flex-row items-center gap-4 mb-10">
-                                <a
-                                    href="#"
-                                    className="flex items-center gap-2 bg-transparent border-2 border-teal-400 text-teal-400 hover:bg-teal-400 hover:text-white transition-all duration-300 py-3 px-6 rounded-lg font-medium"
+                            <div className="flex items-center gap-3">
+                                <button
+                                    onClick={() => setIsOpen(true)}
+                                    className="relative flex items-center justify-center w-14 h-14 rounded-full bg-teal-400 text-white hover:bg-teal-500 transition-all group"
                                 >
-                                    <HiDownload className="text-xl" />
-                                    Get Resume
-                                </a>
-
-                                <div className="flex items-center gap-3">
-                                    <button
-                                        onClick={() => setIsOpen(true)}
-                                        className="relative flex items-center justify-center w-14 h-14 rounded-full bg-teal-400 text-white hover:bg-teal-500 transition-all group"
-                                    >
-                                        <HiPlay className="text-xl ml-1" />
-                                        <span className="absolute w-full h-full rounded-full border-2 border-teal-400 animate-ping opacity-0 group-hover:opacity-100"></span>
-                                    </button>
-                                    <span className="text-lg">Watch Video</span>
-                                </div>
+                                    <HiPlay className="text-xl ml-1" />
+                                    <span className="absolute w-full h-full rounded-full border-2 border-teal-400 animate-ping opacity-0 group-hover:opacity-100"></span>
+                                </button>
+                                <span className="text-lg">Watch Video</span>
                             </div>
-                        </Fade>
-                    </div>
+                        </motion.div>
+                    </motion.div>
 
                     {/* Right Portrait */}
-                    <div className="  flex justify-center    relative">
-                        <Slide direction="right" triggerOnce>
-                            <div className="relative max-w-md">
-                                <div className="relative z-10">
-                                    <div className="w-64 h-64 lg:w-96 lg:h-96 forBannerImg overflow-hidden rounded-xl border-2 border-teal-400/30 shadow-xl">
-                                        <img
-                                            src={mahin}
-                                            alt="Afjal Hossain"
-                                            className="object-cover w-full h-full transition-all duration-500 hover:scale-105"
-                                        />
-                                    </div>
-                                </div>
-
-                                {/* Half-circle decoration */}
-                                <div className="absolute -right-6 -bottom-6 w-64 h-64 md:w-80 md:h-80 rounded-full bg-teal-400 opacity-20 z-0"></div>
-
-                                {/* Social Links */}
-                                {/* <div className="absolute -left-12 top-1/2 transform -translate-y-1/2 flex flex-col gap-4 bg-white/10 backdrop-blur-sm p-3 rounded-full z-20    ">
-                                    <SocialIcon href="https://www.linkedin.com/in/afjalhossain-linkdin/" icon={<FaLinkedinIn  />} />
-                                    <SocialIcon href="https://www.facebook.com/afzalh0ssainmahin/" icon={<FaFacebook />} />
-
-                                    <SocialIcon href="https://github.com/mahin67580" icon={<FaGithub />} />
-
-                                    <a href="#contact" ><SocialIcon icon={<GiArtificialHive />} /></a>
-                                    
-                                </div> */}
-
-                                <div className="absolute forIcons -left-11 lg:-left-14 top-1/2 transform -translate-y-1/2 flex flex-col gap-3.5 lg:gap-5 bg-white/10 backdrop-blur-sm p-3 lg:p-4 rounded-full z-20">
-                                    <SocialIcon
-                                        href="https://www.linkedin.com/in/afjalhossain-linkdin/"
-                                        icon={<FaLinkedinIn className="text-2xl iconSize  " />}
+                    <motion.div
+                        className="relative flex justify-center  "
+                        initial="hidden"
+                        animate="visible"
+                        variants={imageVariants}
+                    >
+                        <div className="relative max-w-md">
+                            <div className="relative z-10">
+                                <motion.div
+                                    className="w-64 h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 overflow-hidden rounded-xl border-2 border-teal-400/30 shadow-xl"
+                                    whileHover={{ scale: 1.02 }}
+                                    transition={{ duration: 0.3 }}
+                                >
+                                    <img
+                                        src={mahin}
+                                        alt="Afjal Hossain"
+                                        className="object-cover w-full h-full"
                                     />
-                                    <SocialIcon
-                                        href="https://www.facebook.com/afzalh0ssainmahin/"
-                                        icon={<FaFacebook className="text-2xl iconSize" />}
-                                    />
-                                    <SocialIcon
-                                        href="https://github.com/mahin67580"
-                                        icon={<FaGithub className="text-2xl iconSize" />}
-                                    />
-                                    <a href="#contact">
-                                        <SocialIcon icon={<FaEnvelope className="text-2xl iconSize" />} />
-                                    </a>
-                                </div>
-
-
-
+                                </motion.div>
                             </div>
-                        </Slide>
-                    </div>
+
+                            {/* Half-circle decoration */}
+                            <motion.div
+                                className="absolute -right-6 -bottom-6 w-64 h-64 lg:w-80 lg:h-80 rounded-full bg-teal-400 opacity-20 z-0"
+                                initial={{ scale: 0 }}
+                                animate={{ scale: 1 }}
+                                transition={{ delay: 0.4, duration: 0.5 }}
+                            />
+
+                            {/* Social Links */}
+                            <motion.div
+                                className="absolute -left-11 lg:-left-14 top-1/2 transform -translate-y-1/2 flex flex-col gap-3.5 lg:gap-5 bg-white/10 backdrop-blur-sm p-3 lg:p-4 rounded-full z-20"
+                                initial={{ x: -20, opacity: 0 }}
+                                animate={{ x: 0, opacity: 1 }}
+                                transition={{ delay: 0.6 }}
+                            >
+                                <SocialIcon
+                                    href="https://www.linkedin.com/in/afjalhossain-linkdin/"
+                                    icon={<FaLinkedinIn className="text-xl lg:text-2xl" />}
+                                />
+                                <SocialIcon
+                                    href="https://www.facebook.com/afzalh0ssainmahin/"
+                                    icon={<FaFacebook className="text-xl lg:text-2xl" />}
+                                />
+                                <SocialIcon
+                                    href="https://github.com/mahin67580"
+                                    icon={<FaGithub className="text-xl lg:text-2xl" />}
+                                />
+                                <a href="#contact">
+                                    <SocialIcon icon={<FaEnvelope className="text-xl lg:text-2xl" />} />
+                                </a>
+                            </motion.div>
+                        </div>
+                    </motion.div>
                 </div>
             </div>
 
             {/* YouTube Modal */}
             {isOpen && (
-                <div className="fixed inset-0 z-50   bg-opacity-70 flex items-center justify-center px-4">
-                    <div className="relative bg-black rounded-lg overflow-hidden w-full max-w-3xl aspect-video shadow-xl">
+                <motion.div
+                    className="fixed inset-0 z-50   bg-opacity-70 flex items-center justify-center px-4"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                >
+                    <motion.div
+                        className="relative bg-black rounded-lg overflow-hidden w-full max-w-3xl aspect-video shadow-xl"
+                        initial={{ scale: 0.9, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        exit={{ scale: 0.9, opacity: 0 }}
+                    >
                         <iframe
                             width="100%"
                             height="100%"
                             src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
                             title="YouTube video player"
                             frameBorder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
                             className="w-full h-full"
-                        ></iframe>
+                        />
 
-                        {/* Close Button */}
                         <button
                             onClick={() => setIsOpen(false)}
                             className="absolute top-2 right-2 text-white bg-teal-500 hover:bg-teal-600 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold"
                         >
                             ✕
                         </button>
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
             )}
         </section>
     );
@@ -193,14 +331,25 @@ const Hero = () => {
 
 // Social Icon Component
 const SocialIcon = ({ href, icon }) => (
-    <a
+    <motion.a
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className="w-9 h-9 lg:w-14 lg:h-14 shazam flex items-center justify-center rounded-full bg-white/20 hover:bg-teal-400 transition-all text-white text-lg hover:scale-110"
+        className="w-10 h-10 lg:w-12 lg:h-12 flex items-center justify-center rounded-full bg-white/20 hover:bg-teal-400 transition-all text-white"
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
     >
         {icon}
-    </a>
+    </motion.a>
 );
 
 export default Hero;
+
+// Add this to your global CSS
+/*
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.2; }
+    50% { transform: scale(1.05); opacity: 0.3; }
+    100% { transform: scale(1); opacity: 0.2; }
+}
+*/
