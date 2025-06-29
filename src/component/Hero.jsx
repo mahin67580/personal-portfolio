@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Fade, Slide } from 'react-awesome-reveal';
 import { HiDownload, HiPlay } from 'react-icons/hi';
-import { FaFacebook, FaDribbble, FaBehance, FaLinkedinIn, FaGithub } from 'react-icons/fa';
+import { FaFacebook, FaLinkedinIn, FaGithub } from 'react-icons/fa';
 import mahin from '../assets/mahin2.jpg'; // Update with your actual image path
 import { GiArtificialHive } from 'react-icons/gi';
 
@@ -105,7 +105,8 @@ const Hero = () => {
                                     <SocialIcon href="https://www.linkedin.com/in/afjalhossain-linkdin/" icon={<FaLinkedinIn />} />
                                     <SocialIcon href="https://www.facebook.com/afzalh0ssainmahin/" icon={<FaFacebook />} />
                                     <SocialIcon href="https://github.com/mahin67580" icon={<FaGithub />} />
-                                    <SocialIcon href="https://www.instructables.com/member/Afja%20Hossain%20Mahin/instructables/" icon={<GiArtificialHive />} />
+                                    <a href="#contact" ><SocialIcon icon={<GiArtificialHive />} /></a>
+                                    
                                 </div>
                             </div>
                         </Slide>

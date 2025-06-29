@@ -5,9 +5,9 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import Footer from './Footertwo';
+ 
 
-const Services = () => {
+const Servicestwo = () => {
     const services = [
         {
             title: "Frontend Development",
@@ -125,10 +125,10 @@ const Services = () => {
                 <div className="absolute bottom-10 right-0 w-40 h-40 rounded-full bg-teal-400/10 blur-3xl"></div>
 
             </section>
-            <Footer></Footer>
+
         </div>
 
     );
 };
 
-export default Services;
+export default Servicestwo;

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Fade, Slide } from 'react-awesome-reveal';
 import html from '../assets/projecti_amge/html.png';
 import css from '../assets/projecti_amge/css.png';
@@ -10,14 +10,10 @@ import Tailwind from '../assets/projecti_amge/tailwind-css.png';
 import Express from '../assets/projecti_amge/Adobe Express - file.png';
 import Git from '../assets/projecti_amge/github.png';
 import Node from '../assets/projecti_amge/node.jpg';
-import Footertwo from './Footertwo';
+ 
 
 
-const Skills = () => {
-     useEffect(() => {
-                document.title = 'Skills';
-                window.scrollTo(0, 0);
-            }, []);
+const Skillstwo = () => {
     const skills = [
         { name: 'HTML5', percentage: 95, icon: html, color: '#E44D26' },
         { name: 'CSS3', percentage: 90, icon: css, color: '#264DE4' },
@@ -36,7 +32,7 @@ const Skills = () => {
     return (
 
         <div>
-            <section id='skills' className="bg-gradient-to-br min-h-screen from-[#0a192f] to-[#0d2b50] text-gray-300 py-20 px-4">
+            <section id='skills' className="bg-gradient-to-br   from-[#0a192f] to-[#0d2b50] text-gray-300 py-20 px-4">
                 <div className="container mx-auto">
                     <Fade direction="down" triggerOnce>
                         <h2 className="text-4xl font-bold text-center mb-4 text-white">Technical Skills</h2>
@@ -132,10 +128,10 @@ const Skills = () => {
       `}</style>
             </section>
 
-            <Footertwo></Footertwo>
+           
         </div>
 
     );
 };
 
-export default React.memo(Skills);
+export default React.memo(Skillstwo);

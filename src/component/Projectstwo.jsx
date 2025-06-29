@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Fade, Slide } from 'react-awesome-reveal';
 import { FiGithub, FiExternalLink, FiInfo } from 'react-icons/fi';
 import { FaReact, FaNodeJs, FaDatabase } from 'react-icons/fa';
@@ -18,13 +18,9 @@ import project12 from '../assets/projecti_amge/Screenshot (12).png';
 import project13 from '../assets/projecti_amge/Screenshot (13).png';
 import project14 from '../assets/projecti_amge/Screenshot (14).png';
 import project15 from '../assets/projecti_amge/Screenshot (15).png';
-import Footertwo from './Footertwo';
+ 
 
-const Projects = () => {
-      useEffect(() => {
-            document.title = 'Projects';
-            window.scrollTo(0, 0);
-        }, []);
+const Projectstwo = () => {
     // Track active image index for each project separately
     const [activeImageIndices, setActiveImageIndices] = useState({});
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -305,10 +301,10 @@ const Projects = () => {
                     </Modal>
                 )}
             </section>
-            <Footertwo></Footertwo>
+      
         </div>
 
     );
 };
 
-export default Projects;
+export default Projectstwo;

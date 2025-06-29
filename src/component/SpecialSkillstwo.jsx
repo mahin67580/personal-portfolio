@@ -1,12 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Fade, Slide } from 'react-awesome-reveal';
 import { FiDownload } from 'react-icons/fi';
-import Footertwo from './Footertwo';
-const SpecialSkills = () => {
-     useEffect(() => {
-                    document.title = 'Soft Skills';
-                    window.scrollTo(0, 0);
-                }, []);
+ 
+const SpecialSkillstwo = () => {
     const skills = [
         { name: 'AI Prompting', percentage: 95 },
         { name: 'Communication', percentage: 65 },
@@ -66,11 +62,11 @@ const SpecialSkills = () => {
                 
             </section>
 
-     <Footertwo></Footertwo>
+     
         </div>
 
 
     );
 };
 
-export default SpecialSkills;
+export default SpecialSkillstwo;

@@ -1,13 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Fade, Slide } from 'react-awesome-reveal';
 import devImage from '../assets/projecti_amge/dev.jpg'
-import Footertwo from './Footertwo';
+ 
 
-const AboutMe = () => {
-    useEffect(() => {
-        document.title = 'AboutMe';
-        window.scrollTo(0, 0);
-    }, []);
+const AboutMetwo = () => {
     return (
         <div>
 
@@ -95,10 +91,10 @@ const AboutMe = () => {
                     </div>
                 </div>
             </section>
-            <Footertwo></Footertwo>
+         
         </div>
 
     );
 };
 
-export default AboutMe;
+export default AboutMetwo;

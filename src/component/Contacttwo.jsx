@@ -2,9 +2,9 @@ import React from 'react';
 import { Fade, Slide } from 'react-awesome-reveal';
 import { FiMail, FiPhone, FiMessageSquare } from 'react-icons/fi';
 import { FaLinkedin, FaFacebook, FaWhatsapp } from 'react-icons/fa';
-import Footertwo from './Footertwo';
+ 
 
-const Contact = () => {
+const Contacttwo = () => {
     const phoneNumber = "+8801875027270";
     const whatsappUrl = `https://wa.me/${phoneNumber}`;
     const emailAddress = "afjalhossainmahin0@gmail.com";
@@ -162,10 +162,10 @@ const Contact = () => {
                     </div>
                 </div>
             </section>
-            <Footertwo></Footertwo>
+            
         </div>
 
     );
 };
 
-export default Contact;
+export default Contacttwo;
