@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Fade, Slide } from 'react-awesome-reveal';
 import { FiGithub, FiExternalLink, FiInfo } from 'react-icons/fi';
 import { FaReact, FaNodeJs, FaDatabase } from 'react-icons/fa';
+import { SiFirebase } from "react-icons/si";
 import { SiMongodb, SiTailwindcss, SiExpress } from 'react-icons/si';
 import Modal from './Modal';
 
@@ -18,13 +19,18 @@ import project12 from '../assets/projecti_amge/Screenshot (12).png';
 import project13 from '../assets/projecti_amge/Screenshot (13).png';
 import project14 from '../assets/projecti_amge/Screenshot (14).png';
 import project15 from '../assets/projecti_amge/Screenshot (15).png';
+import law1 from '../assets/projecti_amge/law1.png';
+import law2 from '../assets/projecti_amge/law2.png';
+import law3 from '../assets/projecti_amge/law3.png';
+import law4 from '../assets/projecti_amge/law4.png';
+
 import Footertwo from './Footertwo';
 
 const Projects = () => {
-      useEffect(() => {
-            document.title = 'Projects';
-            window.scrollTo(0, 0);
-        }, []);
+    useEffect(() => {
+        document.title = 'Projects';
+        window.scrollTo(0, 0);
+    }, []);
     // Track active image index for each project separately
     const [activeImageIndices, setActiveImageIndices] = useState({});
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -33,14 +39,38 @@ const Projects = () => {
     // Sample project data
     const projects = [
         {
-            title: "E-Commerce Platform",
-            description: "A full-featured online shopping platform with user authentication, product management, and payment processing.",
+            title: "Roommate Finder Website",
+            description: "A full-stack web application to help users find compatible roommates based on location, budget, lifestyle, and interests. Includes dashboard analytics, advanced search, and protected user features.",
             features: [
-                "User authentication with JWT",
-                "Product search and filtering",
-                "Shopping cart functionality",
-                "Payment gateway integration",
-                "Admin dashboard"
+                "Authentication with Firebase (Email/Google Sign-In)",
+                "Add, Browse, Update, and Delete Roommate Listings",
+                "Interactive Dashboard with analytics and charts",
+                "Advanced filtering and search by price, location, and status",
+                "Like functionality with contact reveal and self-like prevention",
+                "Responsive design with Dark/Light mode toggle"
+            ],
+            technologies: [
+                { icon: <FaReact className="text-blue-400" />, name: "React" },
+                { icon: <FaNodeJs className="text-green-500" />, name: "Node.js" },
+                { icon: <SiFirebase className="text-yellow-400" />, name: "Firebase" },
+                { icon: <SiMongodb className="text-green-600" />, name: "MongoDB" },
+                { icon: <SiExpress className="text-gray-400" />, name: "Express" },
+                { icon: <SiTailwindcss className="text-cyan-400" />, name: "Tailwind CSS" }
+            ],
+            images: [project1, project2, project3, project4, project5, project6, project7, project8],
+            liveLink: "https://roommate-app-a4ed0.web.app/",
+            githubLink: "https://github.com/mahin67580/roommate-finder-app-frontend"
+        },
+        {
+            title: "Lawer of BD",
+            description: "A modern MERN stack web application for connecting users with legal professionals in Bangladesh. Features searchable lawyer profiles, category filters, and secure authentication.",
+            features: [
+                "Searchable lawyer directory with profile details",
+                "Contact and consultation booking options",
+                "Legal category filters for better navigation",
+                "Authentication and protected routes",
+                "Responsive design with Tailwind CSS",
+                "Fast performance with React and Node.js"
             ],
             technologies: [
                 { icon: <FaReact className="text-blue-400" />, name: "React" },
@@ -48,30 +78,35 @@ const Projects = () => {
                 { icon: <SiMongodb className="text-green-600" />, name: "MongoDB" },
                 { icon: <SiExpress className="text-gray-400" />, name: "Express" },
                 { icon: <SiTailwindcss className="text-cyan-400" />, name: "Tailwind CSS" }
+                // If you used Firebase Auth:
+                // { icon: <SiFirebase className="text-yellow-400" />, name: "Firebase" }
             ],
-            images: [project1, project6, project3, project4, project7, project2, project5, project8],
-            liveLink: "#",
-            githubLink: "#"
+            images: [law1,law2,law3,law4],
+            liveLink: "https://kaleidoscopic-tanuki-87c99a.netlify.app/",
+            githubLink: "#" // Add your GitHub repo link here if available
         },
         {
-            title: "Task Management App",
-            description: "A collaborative task management application for teams to organize and track their work.",
+            title: "WhereIsIt - Lost & Found Web App",
+            description: "A full-stack platform that connects users who have lost items with those who’ve found them. Features secure authentication, item recovery workflows, and dynamic UI components.",
             features: [
-                "Real-time updates with WebSockets",
-                "Drag-and-drop task organization",
-                "Team collaboration features",
-                "Task assignment and deadlines",
-                "Progress tracking"
+                "Email/Google authentication with Firebase & JWT protection",
+                "Add, Update, Delete Lost/Found posts",
+                "Post recovery workflow with modal form and recovery status",
+                "Search functionality by title/location",
+                "Layout toggle (table/card) on recovered items page",
+                "Responsive design with Framer Motion animations and spinners"
             ],
             technologies: [
                 { icon: <FaReact className="text-blue-400" />, name: "React" },
                 { icon: <FaNodeJs className="text-green-500" />, name: "Node.js" },
-                { icon: <FaDatabase className="text-blue-600" />, name: "PostgreSQL" },
-                { icon: <SiTailwindcss className="text-cyan-400" />, name: "Tailwind CSS" }
+                { icon: <SiMongodb className="text-green-600" />, name: "MongoDB" },
+                { icon: <SiExpress className="text-gray-400" />, name: "Express" },
+                { icon: <SiTailwindcss className="text-cyan-400" />, name: "Tailwind CSS" },
+                { icon: <SiFirebase className="text-yellow-400" />, name: "Firebase" }
             ],
             images: [project12, project13, project14, project15],
-            liveLink: "#",
-            githubLink: "#"
+            liveLink: "https://lost-and-found-da620.web.app/",
+            githubLink: "https://github.com/Programming-Hero-Web-Course4/b11a11-client-side-mahin67580"
         }
     ];
 
@@ -122,13 +157,35 @@ const Projects = () => {
                             {/* Left Side - Image Slider */}
                             <Slide direction={index % 2 === 0 ? 'left' : 'right'} triggerOnce>
                                 <div className="  relative group">
-                                    <div className="overflow-hidden rounded-xl shadow-2xl border-2 border-[#1e3a8a]/30">
+
+                                    {/* <div className="overflow-hidden rounded-xl shadow-2xl border-2 border-[#1e3a8a]/30">
                                         <img
                                             src={project.images[activeImageIndices[index] || 0]}
                                             alt={project.title}
                                             className="w-full h-auto object-cover transition-transform duration-500 hover:scale-105"
                                         />
+                                    </div> */}
+
+                                    <div className="overflow-hidden rounded-xl shadow-2xl border-2 border-[#1e3a8a]/30
+                                    lg:w-[900px] lg:h-[570px] laptop-large relative">
+                                        <div
+                                            className="flex transition-transform duration-700 ease-in-out h-full"
+                                            style={{
+                                                transform: `translateX(-${(activeImageIndices[index] || 0) * 100}%)`,
+
+                                            }}
+                                        >
+                                            {project.images.map((img, i) => (
+                                                <img
+                                                    key={i}
+                                                    src={img}
+                                                    alt={`${project.title} ${i}`}
+                                                    className="min-w-full h-full object-cover flex-shrink-0"
+                                                />
+                                            ))}
+                                        </div>
                                     </div>
+
 
                                     {/* Slider Controls */}
                                     <button
@@ -178,7 +235,7 @@ const Projects = () => {
                                         <h4 className="font-semibold text-teal-400 mb-2">Technologies Used:</h4>
                                         <div className="flex flex-wrap gap-4">
                                             {project.technologies.map((tech, i) => (
-                                                <div key={i} className="flex items-center gap-2 bg-[#112240] px-3 py-2 rounded-lg">
+                                                <div key={i} className="flex items-center gap-2 border bg-[#112240] px-3 py-2 rounded-lg">
                                                     {tech.icon}
                                                     <span>{tech.name}</span>
                                                 </div>

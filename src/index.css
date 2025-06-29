@@ -1,9 +1,22 @@
 @import "tailwindcss";
+
 @keyframes pulse {
-  0% { transform: scale(1); opacity: 0.2; }
-  50% { transform: scale(1.1); opacity: 0.3; }
-  100% { transform: scale(1); opacity: 0.2; }
+  0% {
+    transform: scale(1);
+    opacity: 0.2;
+  }
+
+  50% {
+    transform: scale(1.1);
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0.2;
+  }
 }
+
 .btn-sm {
   @apply px-4 py-2 text-sm font-medium rounded-md transition-colors;
 }
@@ -11,6 +24,35 @@
 .btn-outline-one {
   @apply border border-teal-500 text-teal-500 hover:bg-teal-500 hover:text-white;
 }
+
 html {
   scroll-behavior: smooth;
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1366px) {
+  .laptop-large {
+    width: 800px;
+    height: 600px;
+  }
+
+  .forBannerImg {
+    width: 20rem; /* 320px */
+    height: 20rem; /* 320px */
+  }
+
+  .forIcons {
+    left: -3rem;
+    gap: 1rem;
+    padding: 0.75rem;
+  }
+
+  .iconSize {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .shazam {
+    width: 2.5rem;   /* 40px */
+    height: 2.5rem;  /* 40px */
+  }
 }

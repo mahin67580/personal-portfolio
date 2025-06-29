@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Fade, Slide } from 'react-awesome-reveal';
 import { HiDownload, HiPlay } from 'react-icons/hi';
-import { FaFacebook, FaLinkedinIn, FaGithub } from 'react-icons/fa';
+import { FaFacebook, FaLinkedinIn, FaGithub, FaEnvelope } from 'react-icons/fa';
 import mahin from '../assets/mahin2.jpg'; // Update with your actual image path
-import { GiArtificialHive } from 'react-icons/gi';
+import { TypeAnimation } from 'react-type-animation';
+
 
 const Hero = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -41,9 +42,9 @@ const Hero = () => {
             </div>
 
             <div className="container mx-auto px-4">
-                <div className="flex flex-col lg:flex-row items-center">
+                <div className="flex flex-col lg:flex-row items-center justify-center ">
                     {/* Left Content */}
-                    <div className="w-full lg:w-7/12 lg:mb-0">
+                    <div className="  lg:w-9/12  ">
                         <Fade direction="left" cascade damping={0.1} triggerOnce>
                             <h3 className="text-xl md:text-2xl font-light text-teal-400 mb-2">
                                 Hello! I'm
@@ -52,11 +53,35 @@ const Hero = () => {
                                 Afjal <span className="text-teal-400">Hossain</span>
                             </h2>
 
-                            <div className="w-full mb-8">
+                            {/* <div className="w-full mb-8">
                                 <img
-                                    src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=500&size=26&pause=1000&center=true&vCenter=true&width=800&lines=Hello,+There!+👋;This+is+MD+Afjal+Hossain;A+Passionate+MERN+Stack+Web+Developer;Nice+to+meet+you!"
+                                    src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=500&size=26&pause=1000&center=true&vCenter=true&width=800&lines=Hello,There!👋;This is Afjal Hossain;A+Passionate MERN Developer;Nice+to+meet+you!"
                                     alt="Typing SVG"
                                     className="w-full h-auto max-w-2xl mx-auto"
+                                />
+                            </div> */}
+                            <div className="text-2xl md:text-3xl font-mono text-center  md:h-20 mb-8 lg:mb-0 lg:ml-24 w-80 lg:w-96 text-purple-200">
+                                <TypeAnimation
+                                    sequence={[
+                                        'Hello,There!👋 ',
+                                        1000,
+                                        'This is Afjal Hossain',
+                                        1000,
+                                        'MERN Stack Developer',
+                                        1000,
+                                        'Frontend Specialist',
+                                        1000,
+                                        'React Enthusiast',
+                                        1000,
+
+                                    ]}
+                                    wrapper="span"
+                                    cursor={true}
+                                    repeat={Infinity}
+                                    style={{
+                                        display: 'inline-block',
+                                        color: '#36BCF7'
+                                    }}
                                 />
                             </div>
 
@@ -84,11 +109,11 @@ const Hero = () => {
                     </div>
 
                     {/* Right Portrait */}
-                    <div className="w-full lg:w-5/12 flex justify-center relative">
+                    <div className="  flex justify-center    relative">
                         <Slide direction="right" triggerOnce>
                             <div className="relative max-w-md">
                                 <div className="relative z-10">
-                                    <div className="w-64 h-64 md:w-80 md:h-80 overflow-hidden rounded-xl border-2 border-teal-400/30 shadow-xl">
+                                    <div className="w-64 h-64 lg:w-96 lg:h-96 forBannerImg overflow-hidden rounded-xl border-2 border-teal-400/30 shadow-xl">
                                         <img
                                             src={mahin}
                                             alt="Afjal Hossain"
@@ -101,13 +126,36 @@ const Hero = () => {
                                 <div className="absolute -right-6 -bottom-6 w-64 h-64 md:w-80 md:h-80 rounded-full bg-teal-400 opacity-20 z-0"></div>
 
                                 {/* Social Links */}
-                                <div className="absolute -left-12 top-1/2 transform -translate-y-1/2 flex flex-col gap-4 bg-white/10 backdrop-blur-sm p-3 rounded-full z-20">
-                                    <SocialIcon href="https://www.linkedin.com/in/afjalhossain-linkdin/" icon={<FaLinkedinIn />} />
+                                {/* <div className="absolute -left-12 top-1/2 transform -translate-y-1/2 flex flex-col gap-4 bg-white/10 backdrop-blur-sm p-3 rounded-full z-20    ">
+                                    <SocialIcon href="https://www.linkedin.com/in/afjalhossain-linkdin/" icon={<FaLinkedinIn  />} />
                                     <SocialIcon href="https://www.facebook.com/afzalh0ssainmahin/" icon={<FaFacebook />} />
+
                                     <SocialIcon href="https://github.com/mahin67580" icon={<FaGithub />} />
+
                                     <a href="#contact" ><SocialIcon icon={<GiArtificialHive />} /></a>
                                     
+                                </div> */}
+
+                                <div className="absolute forIcons -left-11 lg:-left-14 top-1/2 transform -translate-y-1/2 flex flex-col gap-3.5 lg:gap-5 bg-white/10 backdrop-blur-sm p-3 lg:p-4 rounded-full z-20">
+                                    <SocialIcon
+                                        href="https://www.linkedin.com/in/afjalhossain-linkdin/"
+                                        icon={<FaLinkedinIn className="text-2xl iconSize  " />}
+                                    />
+                                    <SocialIcon
+                                        href="https://www.facebook.com/afzalh0ssainmahin/"
+                                        icon={<FaFacebook className="text-2xl iconSize" />}
+                                    />
+                                    <SocialIcon
+                                        href="https://github.com/mahin67580"
+                                        icon={<FaGithub className="text-2xl iconSize" />}
+                                    />
+                                    <a href="#contact">
+                                        <SocialIcon icon={<FaEnvelope className="text-2xl iconSize" />} />
+                                    </a>
                                 </div>
+
+
+
                             </div>
                         </Slide>
                     </div>
@@ -149,7 +197,7 @@ const SocialIcon = ({ href, icon }) => (
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className="w-10 h-10 flex items-center justify-center rounded-full bg-white/20 hover:bg-teal-400 transition-all text-white text-lg hover:scale-110"
+        className="w-9 h-9 lg:w-14 lg:h-14 shazam flex items-center justify-center rounded-full bg-white/20 hover:bg-teal-400 transition-all text-white text-lg hover:scale-110"
     >
         {icon}
     </a>

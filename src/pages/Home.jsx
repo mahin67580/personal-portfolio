@@ -1,9 +1,5 @@
 import React, { useEffect } from 'react';
 import Hero from '../component/Hero';
-import Projects from '../component/Projects';
-import Skills from '../component/Skills';
-import SpecialSkills from '../component/SpecialSkills';
-import Contact from '../component/Contact';
 import Footer from '../component/Footer';
 import Servicestwo from '../component/homecomponent/Servicestwo';
 import AboutMetwo from '../component/AboutMetwo';
