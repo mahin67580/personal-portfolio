@@ -286,6 +286,7 @@ const Hero = () => {
                                     <SocialIcon icon={<FaEnvelope className="text-xl lg:text-2xl" />} />
                                 </a>
                             </motion.div>
+                            
                         </div>
                     </motion.div>
                 </div>
