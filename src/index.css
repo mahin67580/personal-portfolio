@@ -25,6 +25,31 @@ body {
     opacity: 0.2;
   }
 } */
+.services-bullet {
+    width: 10px;
+    height: 10px;
+    background-color: #1e3a8a;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.services-bullet-active {
+    background-color: #4fd1c5;
+    width: 30px;
+    border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+
 
 @keyframes pulse {
   0% {

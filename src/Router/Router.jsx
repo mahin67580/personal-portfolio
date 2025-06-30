@@ -11,6 +11,7 @@ import Projects from "../component/Projects";
 import Contact from "../component/Contact";
 import Skills from "../component/Skills";
 import SpecialSkills from "../component/SpecialSkills";
+import Educationtwo from "../component/Educationtwo";
 
 export const router = createBrowserRouter([
     {
@@ -43,8 +44,8 @@ export const router = createBrowserRouter([
                 element: <Skills/>,
             },
             {
-                path: '/soft-skill',
-                element: <SpecialSkills/>,
+                path: '/education',
+                element: <Educationtwo/>,
             },
              
              

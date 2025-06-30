@@ -7,6 +7,7 @@ import Projectstwo from '../component/Projectstwo';
 import Skillstwo from '../component/Skillstwo';
 import SpecialSkillstwo from '../component/SpecialSkillstwo';
 import Contacttwo from '../component/Contacttwo';
+import Education from '../component/Education';
 
 
 const Home = () => {
@@ -22,6 +23,7 @@ const Home = () => {
             <SpecialSkillstwo></SpecialSkillstwo>
             <Servicestwo></Servicestwo>
             <AboutMetwo></AboutMetwo>
+            <Education></Education>
             <Contacttwo></Contacttwo>
             <Footer></Footer>
         </div>

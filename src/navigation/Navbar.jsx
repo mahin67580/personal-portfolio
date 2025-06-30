@@ -53,7 +53,7 @@ const Navbar = () => {
                 { name: 'About', path: '/about' },
                 { name: 'Project', path: '/project-list' },
                 { name: 'Tech Skills', path: '/tech-skill' },
-                { name: 'Soft Skills', path: '/soft-skill' },
+                { name: 'Education', path: '/education' },
                 { name: '404 Page', path: '/404-page' },
             ],
         },

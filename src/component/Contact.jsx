@@ -2,7 +2,9 @@ import React from 'react';
 import { Fade, Slide } from 'react-awesome-reveal';
 import { FiMail, FiPhone, FiMessageSquare } from 'react-icons/fi';
 import { FaLinkedin, FaFacebook, FaWhatsapp } from 'react-icons/fa';
+import { Link } from 'react-router';
 import Footertwo from './Footertwo';
+
 
 const Contact = () => {
     const phoneNumber = "+8801875027270";
@@ -27,57 +29,60 @@ const Contact = () => {
                         <Slide direction="left" triggerOnce>
                             <div className="space-y-8">
                                 {/* Email */}
-                                <div className="flex items-start gap-4">
-                                    <div className="p-3 bg-[#112240] rounded-lg text-teal-400">
-                                        <FiMail className="text-2xl" />
-                                    </div>
-                                    <div>
-                                        <h3 className="text-xl font-semibold mb-1">Email Me</h3>
-                                        <a
-                                            href={`mailto:${emailAddress}`}
-                                            className="text-gray-400 hover:text-teal-400 transition-colors"
-                                        >
+                                <a href={`mailto:${emailAddress}`} className="text-gray-400 hover:text-teal-400 transition-colors" >
+                                    <div className="flex items-start gap-4   p-4 w-80">
+                                        <div className="p-3 bg-[#112240] rounded-lg text-teal-400">
+                                            <FiMail className="text-2xl" />
+                                        </div>
+                                        <div>
+                                            <h3 className="text-xl font-semibold mb-1">Email Me</h3>
+
                                             {emailAddress}
-                                        </a>
+
+                                        </div>
                                     </div>
-                                </div>
+                                </a>
+
 
                                 {/* WhatsApp */}
-                                <div className="flex items-start gap-4">
-                                    <div className="p-3 bg-[#112240] rounded-lg text-teal-400">
-                                        <FaWhatsapp className="text-2xl" />
-                                    </div>
-                                    <div>
-                                        <h3 className="text-xl font-semibold mb-1">WhatsApp</h3>
-                                        <a
-                                            href={whatsappUrl}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="text-gray-400 hover:text-teal-400 transition-colors"
-                                        >
+                                <a href={whatsappUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-gray-400 hover:text-teal-400 transition-colors">
+                                    <div className="flex items-start gap-4  p-4 w-80">
+                                        <div className="p-3 bg-[#112240] rounded-lg text-teal-400">
+                                            <FaWhatsapp className="text-2xl" />
+                                        </div>
+                                        <div>
+                                            <h3 className="text-xl font-semibold mb-1">WhatsApp</h3>
+
                                             {phoneNumber}
-                                        </a>
+
+                                        </div>
                                     </div>
-                                </div>
+
+                                </a>
+
 
                                 {/* Call */}
-                                <div className="flex items-start gap-4">
-                                    <div className="p-3 bg-[#112240] rounded-lg text-teal-400">
-                                        <FiPhone className="text-2xl" />
-                                    </div>
-                                    <div>
-                                        <h3 className="text-xl font-semibold mb-1">Call Me</h3>
-                                        <a
-                                            href={`tel:${phoneNumber}`}
-                                            className="text-gray-400 hover:text-teal-400 transition-colors"
-                                        >
+                                <a href={`tel:${phoneNumber}`}
+                                    className="text-gray-400 hover:text-teal-400 transition-colors">
+                                    <div className="flex items-start gap-4  p-4 w-80">
+                                        <div className="p-3 bg-[#112240] rounded-lg text-teal-400">
+                                            <FiPhone className="text-2xl" />
+                                        </div>
+                                        <div>
+                                            <h3 className="text-xl font-semibold mb-1">Call Me</h3>
+
                                             {phoneNumber}
-                                        </a>
+
+                                        </div>
                                     </div>
-                                </div>
+                                </a>
+
 
                                 {/* Social Media */}
-                                <div className="flex items-start gap-4 pt-4">
+                                <div className="flex items-start gap-4 pt-4  p-4 w-80">
                                     <div className="p-3 bg-[#112240] rounded-lg text-teal-400">
                                         <FiMessageSquare className="text-2xl" />
                                     </div>
@@ -117,29 +122,41 @@ const Contact = () => {
                             >
                                 <input type="hidden" name="_captcha" value="false" />
                                 <input type="hidden" name="_subject" value="New contact from portfolio!" />
+                                <div className='grid lg:grid-cols-2 grid-cols-1 gap-3'>
+                                    <div className="space-y-1">
+                                        <label htmlFor="name" className="block text-sm font-medium">Your Name</label>
+                                        <input
+                                            type="text"
+                                            id="name"
+                                            name="name"
+                                            required
+                                            className="w-full bg-[#0a192f] border border-[#1e3a8a] rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-teal-400"
+                                        />
+                                    </div>
+
+                                    <div className="space-y-1">
+                                        <label htmlFor="email" className="block text-sm font-medium">Your Email</label>
+                                        <input
+                                            type="email"
+                                            id="email"
+                                            name="email"
+                                            required
+                                            className="w-full bg-[#0a192f] border border-[#1e3a8a] rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-teal-400"
+                                        />
+                                    </div>
+                                </div>
 
                                 <div className="space-y-1">
-                                    <label htmlFor="name" className="block text-sm font-medium">Your Name</label>
+                                    <label htmlFor="subject" className="block text-sm font-medium">Your Subject</label>
                                     <input
                                         type="text"
-                                        id="name"
-                                        name="name"
+                                        id="subject"
+                                        name="subject"
                                         required
                                         className="w-full bg-[#0a192f] border border-[#1e3a8a] rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-teal-400"
+                                        placeholder="Job Opportunity / Project Inquiry"
                                     />
                                 </div>
-
-                                <div className="space-y-1">
-                                    <label htmlFor="email" className="block text-sm font-medium">Your Email</label>
-                                    <input
-                                        type="email"
-                                        id="email"
-                                        name="email"
-                                        required
-                                        className="w-full bg-[#0a192f] border border-[#1e3a8a] rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-teal-400"
-                                    />
-                                </div>
-
                                 <div className="space-y-1">
                                     <label htmlFor="message" className="block text-sm font-medium">Your Message</label>
                                     <textarea
@@ -148,6 +165,7 @@ const Contact = () => {
                                         rows="5"
                                         required
                                         className="w-full bg-[#0a192f] border border-[#1e3a8a] rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-teal-400"
+                                        placeholder='"Hi Afjal, we&#39;re looking for a frontend developer for our team. We&#39;d like to discuss a potential opportunity with you. Could we schedule a call to talk about the role requirements and your availability?"'
                                     ></textarea>
                                 </div>
 
@@ -155,7 +173,8 @@ const Contact = () => {
                                     type="submit"
                                     className="w-full bg-teal-400 hover:bg-teal-500 text-[#0a192f] font-bold py-3 px-6 rounded-lg transition-colors"
                                 >
-                                    Send Message
+                                    Hire
+                                    Me - Let's Talk!
                                 </button>
                             </form>
                         </Slide>

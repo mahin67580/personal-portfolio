@@ -22,7 +22,7 @@ const Footertwo = () => {
                             <li> <Link to={'/about'} className="hover:text-teal-400 transition-colors">About</Link></li>
                             <li> <Link to={'/project-list'} className="hover:text-teal-400 transition-colors">Projects</Link></li>
                             <li> <Link to={'/tech-skill'} className="hover:text-teal-400 transition-colors">Tech Skills</Link></li>
-                            <li> <Link to={'/soft-skill'} className="hover:text-teal-400 transition-colors">Soft Skills</Link></li>
+                            <li> <Link to={'/education'} className="hover:text-teal-400 transition-colors">Education</Link></li>
 
                             {/* <li><a href="#projects" className="hover:text-teal-400 transition-colors">Projects</a></li>
                             <li><a href="#contact" className="hover:text-teal-400 transition-colors">Contact</a></li> */}
