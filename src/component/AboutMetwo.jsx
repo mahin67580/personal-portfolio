@@ -111,7 +111,7 @@ const AboutMetwo = () => {
                 bg-white/10 backdrop-blur-sm 
                 p-3 lg:p-4 rounded-full z-20">
                 <a
-                  href="https://www.linkedin.com/in/afjalhossain-linkdin/"
+                  href="https://www.linkedin.com/in/afjal-hossain-webdev/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white hover:text-blue-400 transition-colors"

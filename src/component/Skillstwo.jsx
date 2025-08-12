@@ -17,21 +17,21 @@ import figma from '../assets/projecti_amge/figma.jpg';
 import vercel from '../assets/projecti_amge/figma2.png';
 
 const skills = [
-  { name: 'HTML5', percentage: 95, icon: html, color: '#E44D26', category: 'frontend' },
-  { name: 'CSS3', percentage: 90, icon: css, color: '#264DE4', category: 'frontend' },
-  { name: 'JavaScript', percentage: 92, icon: JavaScript, color: '#F7DF1E', category: 'backend' },
-  { name: 'React', percentage: 90, icon: Reactimg, color: '#61DAFB', category: 'frontend' },
-  { name: 'Node.js', percentage: 65, icon: Node, color: '#68A063', category: 'backend' },
-  { name: 'MongoDB', percentage: 80, icon: MongoDB, color: '#4DB33D', category: 'backend' },
-  { name: 'Firebase', percentage: 75, icon: Firebase, color: '#FFCA28', category: 'backend' },
-  { name: 'Tailwind CSS', percentage: 88, icon: Tailwind, color: '#38B2AC', category: 'frontend' },
-  { name: 'Express', percentage: 78, icon: Express, color: '#000000', category: 'backend' },
-  { name: 'Git', percentage: 83, icon: Git, color: '#F05032', category: 'devops' },
-  { name: 'Daisy', percentage: 83, icon: daisy, color: '#F7DF1E', category: 'frontend' },
-  { name: 'Netlify', percentage: 83, icon: netlify, color: '#38B2AC', category: 'devops' },
-  { name: 'Vite', percentage: 83, icon: vite, color: '#F7DF1E', category: 'frontend' },
-  { name: 'Figma', percentage: 83, icon: figma, color: '#264DE4', category: 'devops' },
-  { name: 'Vercel', percentage: 83, icon: vercel, color: '#000000', category: 'devops' },
+  { name: 'HTML5', percentage: 100, icon: html, color: '#E44D26', category: 'frontend' },
+  { name: 'CSS3', percentage: 100, icon: css, color: '#264DE4', category: 'frontend' },
+  { name: 'JavaScript', percentage: 100, icon: JavaScript, color: '#F7DF1E', category: 'backend' },
+  { name: 'React', percentage: 100, icon: Reactimg, color: '#61DAFB', category: 'frontend' },
+  { name: 'Node.js', percentage: 100, icon: Node, color: '#68A063', category: 'backend' },
+  { name: 'MongoDB', percentage: 100, icon: MongoDB, color: '#4DB33D', category: 'backend' },
+  { name: 'Firebase', percentage: 100, icon: Firebase, color: '#FFCA28', category: 'backend' },
+  { name: 'Tailwind CSS', percentage: 100, icon: Tailwind, color: '#38B2AC', category: 'frontend' },
+  { name: 'Express', percentage: 100, icon: Express, color: '#000000', category: 'backend' },
+  { name: 'Git', percentage: 100, icon: Git, color: '#F05032', category: 'devops' },
+  { name: 'Daisy', percentage: 100, icon: daisy, color: '#F7DF1E', category: 'frontend' },
+  { name: 'Netlify', percentage: 100, icon: netlify, color: '#38B2AC', category: 'devops' },
+  { name: 'Vite', percentage: 100, icon: vite, color: '#F7DF1E', category: 'frontend' },
+  { name: 'Figma', percentage: 100, icon: figma, color: '#264DE4', category: 'devops' },
+  { name: 'Vercel', percentage: 100, icon: vercel, color: '#000000', category: 'devops' },
 ];
 
 const circleRadius = 15.9155;
@@ -43,6 +43,8 @@ const Skillstwo = () => {
   const filteredSkills = activeCategory === 'all' 
     ? skills 
     : skills.filter(skill => skill.category === activeCategory);
+
+    
 
   return (
     <section id="skills" className="bg-gradient-to-br from-[#0a192f] to-[#0d2b50] text-gray-300 py-20 px-4">
@@ -164,11 +166,9 @@ const Skillstwo = () => {
                   </div>
 
                   {/* Skill Name & Percentage */}
-                  <div className="flex justify-between items-center gap-3 w-full px-1">
+                  <div className="flex justify-center items-center gap-3 w-full px-1">
                     <h3 className="text-lg font-semibold">{skill.name}</h3>
-                    <span className="text-sm font-bold" style={{ color: skill.color }}>
-                      {skill.percentage}%
-                    </span>
+                    
                   </div>
 
                   {/* Progress Bar for Small Screens */}

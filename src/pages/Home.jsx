@@ -18,12 +18,12 @@ const Home = () => {
     return (
         <div>
             <Hero></Hero>
-            <Projectstwo></Projectstwo>
+            <AboutMetwo></AboutMetwo>
             <Skillstwo></Skillstwo>
+            <Education></Education>
+            <Projectstwo></Projectstwo>
             <SpecialSkillstwo></SpecialSkillstwo>
             <Servicestwo></Servicestwo>
-            <AboutMetwo></AboutMetwo>
-            <Education></Education>
             <Contacttwo></Contacttwo>
             <Footer></Footer>
         </div>

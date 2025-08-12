@@ -11,6 +11,27 @@ const SpecialSkillstwo = () => {
         { name: 'Flexibility', percentage: 80 },
     ];
 
+
+    // Add this function to handle resume download
+    const handleDownloadResume = () => {
+        // Path to your resume file in the public folder
+        const resumeUrl = '/src/assets/Resume.pdf'; // or '../assets/resume.pdf' if it's in src/assets
+
+        // Create an anchor element
+        const link = document.createElement('a');
+        link.href = resumeUrl;
+
+        // This suggests the filename for the download
+        link.download = 'Afjal_Hossain_Resume.pdf';
+
+        // Append to the DOM, trigger click, then remove
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+
+
+
     // Animation variants
     const container = {
         hidden: { opacity: 0 },
@@ -51,7 +72,7 @@ const SpecialSkillstwo = () => {
             <div className="container mx-auto px-4 max-w-7xl">
                 <div className="flex flex-col lg:flex-row items-center gap-12">
                     {/* Left Content */}
-                    <motion.div 
+                    <motion.div
                         className="w-full lg:w-1/2"
                         initial="hidden"
                         whileInView="visible"
@@ -62,7 +83,7 @@ const SpecialSkillstwo = () => {
                             <span className="text-teal-400 font-medium tracking-wider">Special Skills</span>
                             <h2 className="text-4xl font-bold text-white">My Professional Capabilities</h2>
                             <motion.a
-                                href="#"
+                                onClick={handleDownloadResume}
                                 className="inline-flex items-center gap-2 border-2 border-teal-400 text-teal-400 hover:bg-teal-400 hover:text-[#0a192f] font-medium px-6 py-3 rounded-lg transition-colors"
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
@@ -73,7 +94,7 @@ const SpecialSkillstwo = () => {
                     </motion.div>
 
                     {/* Right Content - Skills */}
-                    <motion.div 
+                    <motion.div
                         className="w-full lg:w-1/2"
                         initial="hidden"
                         whileInView="visible"
@@ -82,8 +103,8 @@ const SpecialSkillstwo = () => {
                     >
                         <div className="space-y-8">
                             {skills.map((skill, index) => (
-                                <motion.div 
-                                    key={index} 
+                                <motion.div
+                                    key={index}
                                     className="space-y-2"
                                     variants={item}
                                 >
@@ -109,7 +130,7 @@ const SpecialSkillstwo = () => {
             </div>
 
             {/* Decorative Shape */}
-            <motion.div 
+            <motion.div
                 className="absolute -bottom-20 -right-20 w-64 h-64 rounded-full bg-teal-400 opacity-10 blur-3xl"
                 initial={{ opacity: 0, scale: 0.5 }}
                 whileInView={{ opacity: 0.1, scale: 1 }}

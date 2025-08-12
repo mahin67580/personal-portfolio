@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { HiDownload, HiPlay } from 'react-icons/hi';
-import { FaFacebook, FaLinkedinIn, FaEnvelope } from 'react-icons/fa';
-import mahin from '../assets/mahin2.jpg';
+import { FaFacebook, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa';
+import mahin from '../assets/mahin7-min.jpg';
 import { TypeAnimation } from 'react-type-animation';
 import {
     FaReact,
@@ -18,9 +18,28 @@ import {
     SiTypescript,
     SiTailwindcss,
 } from "react-icons/si";
+import { FiDownload } from 'react-icons/fi';
 const Hero = () => {
     const [isOpen, setIsOpen] = useState(false);
     const videoId = 'iWuEpnTTD3k';
+
+    // Add this function to handle resume download
+    const handleDownloadResume = () => {
+        // Path to your resume file in the public folder
+        const resumeUrl = '/src/assets/Resume.pdf'; // or '../assets/resume.pdf' if it's in src/assets
+
+        // Create an anchor element
+        const link = document.createElement('a');
+        link.href = resumeUrl;
+
+        // This suggests the filename for the download
+        link.download = 'Afjal_Hossain_Resume.pdf';
+
+        // Append to the DOM, trigger click, then remove
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
 
     // Animation variants
     const containerVariants = {
@@ -110,28 +129,28 @@ const Hero = () => {
                 ))}
             </div> */}
 
-             <div className="absolute inset-0 overflow-hidden z-0 pointer-events-none">
-      {techIcons.map((tech) => (
-        <motion.div
-          key={tech.id}
-          className="absolute"
-          style={{
-            left: tech.x,
-            top: 0,
-          }}
-          animate={{ y: ["-100px", "80vh"], opacity: [0, 0.5, 0] }}
-          transition={{
-            duration: 6,
-            delay: tech.delay,
-            repeat: Infinity,
-            repeatType: "loop",
-            ease: "easeInOut",
-          }}
-        >
-          {tech.icon}
-        </motion.div>
-      ))}
-    </div>
+            <div className="absolute inset-0 overflow-hidden z-0 pointer-events-none">
+                {techIcons.map((tech) => (
+                    <motion.div
+                        key={tech.id}
+                        className="absolute"
+                        style={{
+                            left: tech.x,
+                            top: 0,
+                        }}
+                        animate={{ y: ["-100px", "80vh"], opacity: [0, 0.5, 0] }}
+                        transition={{
+                            duration: 6,
+                            delay: tech.delay,
+                            repeat: Infinity,
+                            repeatType: "loop",
+                            ease: "easeInOut",
+                        }}
+                    >
+                        {tech.icon}
+                    </motion.div>
+                ))}
+            </div>
 
             <div className="absolute top-0 left-0 w-full flex justify-between">
                 {[...Array(3)].map((_, i) => (
@@ -187,16 +206,27 @@ const Hero = () => {
                         >
                             <TypeAnimation
                                 sequence={[
-                                    'Hello,There!👋 ',
-                                    1000,
-                                    'This is Afjal Hossain',
-                                    1000,
                                     'MERN Stack Developer',
                                     1000,
-                                    'Frontend Specialist',
+                                    'MongoDB',
                                     1000,
-                                    'React Enthusiast',
+                                    'Express-JS',
                                     1000,
+                                    'React-JS',
+                                    1000,
+                                    'Node-JS',
+                                    1000,
+                                    'Java-Script',
+                                    1000,
+                                    'Type-Script',
+                                    1000,
+                                    'HTML',
+                                    1000,
+                                    'CSS',
+                                    1000,
+                                    'Firebase',
+                                    1000,
+
                                 ]}
                                 wrapper="span"
                                 cursor={true}
@@ -212,13 +242,14 @@ const Hero = () => {
                             className="flex flex-col sm:flex-row items-center gap-4 mb-10"
                             variants={itemVariants}
                         >
-                            <a
-                                href="#"
-                                className="flex items-center gap-2 bg-transparent border-2 border-teal-400 text-teal-400 hover:bg-teal-400 hover:text-white transition-all duration-300 py-3 px-6 rounded-lg font-medium"
+                            <motion.a
+                                onClick={handleDownloadResume}
+                                className="inline-flex items-center gap-2 border-2 border-teal-400 text-teal-400 hover:bg-teal-400 hover:text-[#0a192f] font-medium px-6 py-3 rounded-lg transition-colors"
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
                             >
-                                <HiDownload className="text-xl" />
-                                Get Resume
-                            </a>
+                                <FiDownload /> Get Resume
+                            </motion.a>
 
                             <div className="flex items-center gap-3">
                                 <button
@@ -271,7 +302,7 @@ const Hero = () => {
                                 transition={{ delay: 0.6 }}
                             >
                                 <SocialIcon
-                                    href="https://www.linkedin.com/in/afjalhossain-linkdin/"
+                                    href="https://www.linkedin.com/in/afjal-hossain-webdev/"
                                     icon={<FaLinkedinIn className="text-xl lg:text-2xl" />}
                                 />
                                 <SocialIcon
@@ -282,11 +313,12 @@ const Hero = () => {
                                     href="https://github.com/mahin67580"
                                     icon={<FaGithub className="text-xl lg:text-2xl" />}
                                 />
-                                <a href="#contact">
-                                    <SocialIcon icon={<FaEnvelope className="text-xl lg:text-2xl" />} />
-                                </a>
+                                <SocialIcon
+                                    href="https://wa.me/8801875027270" // WhatsApp link format with country code
+                                    icon={<FaWhatsapp className="text-xl lg:text-2xl" />}
+                                />
                             </motion.div>
-                            
+
                         </div>
                     </motion.div>
                 </div>

@@ -12,6 +12,7 @@ import Contact from "../component/Contact";
 import Skills from "../component/Skills";
 import SpecialSkills from "../component/SpecialSkills";
 import Educationtwo from "../component/Educationtwo";
+import BlogOne from "../personal Blog/BlogOne";
 
 export const router = createBrowserRouter([
     {
@@ -46,6 +47,10 @@ export const router = createBrowserRouter([
             {
                 path: '/education',
                 element: <Educationtwo/>,
+            },
+            {
+                path: '/blog_one',
+                element: <BlogOne/>
             },
              
              

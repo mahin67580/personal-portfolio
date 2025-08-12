@@ -43,7 +43,7 @@ const Navbar = () => {
         {
             name: 'Blog',
             submenu: [
-                { name: 'Personal Blog', path: '/blog-list-personal' },
+                { name: 'Personal Blog', path: '/blog_one' },
 
             ],
         },
@@ -61,7 +61,7 @@ const Navbar = () => {
     ];
 
     return (
-        <header className="  backdrop-blur-md bg-[#0a192f]/90 border-b border-[#1e3a8a]/30 ">
+        <header className="   h-18 backdrop-blur-md bg-[#0a192f]/90 border-b border-[#1e3a8a]/30 ">
             <div className="container mx-auto px-4">
                 <div className="flex justify-between items-center py-4">
                     {/* Logo */}
@@ -86,9 +86,10 @@ const Navbar = () => {
                                                 <FiChevronDown className="ml-1" />
                                             </button>
                                             <div
-                                                className={`absolute left-0 mt-2 w-48 bg-[#0a192f]/95 rounded-md shadow-lg py-1 z-50 border border-[#1e3a8a]/30 ${openDropdown === item.name ? 'block' : 'hidden group-hover:block'
+                                                className={`absolute left-0 mt-2 w-48 bg-[#0a192f]/95 rounded-md shadow-lg py-1 z-50 border border-[#1e3a8a]/30 transform transition-all duration-500 ease-in-out origin-top ${openDropdown === item.name ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'
                                                     }`}
                                             >
+                                                {/* group-hover:block */}
                                                 {item.submenu.map((subItem) => (
                                                     <NavLink
                                                         key={subItem.name}
@@ -163,7 +164,7 @@ const Navbar = () => {
                                         </button>
                                         {/*submenu container */}
                                         <div
-                                            className={`overflow-hidden transition-all duration-120 ease-in-out ${openDropdown === item.name ? 'max-h-96' : 'max-h-0'
+                                            className={`overflow-hidden transition-all   ${openDropdown === item.name ? 'max-h-96' : 'max-h-0'
                                                 }`}
                                         >
                                             <div className="pl-6">
