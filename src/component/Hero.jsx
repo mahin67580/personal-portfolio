@@ -21,7 +21,7 @@ import {
 import { FiDownload } from 'react-icons/fi';
 const Hero = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const videoId = 'iWuEpnTTD3k';
+    const videoId = '9I4KBr_nLWc';
 
     // Add this function to handle resume download
     const handleDownloadResume = () => {

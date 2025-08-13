@@ -40,11 +40,29 @@ const circumference = 2 * Math.PI * circleRadius;
 const Skillstwo = () => {
   const [activeCategory, setActiveCategory] = useState('all');
 
-  const filteredSkills = activeCategory === 'all' 
-    ? skills 
+  const filteredSkills = activeCategory === 'all'
+    ? skills
     : skills.filter(skill => skill.category === activeCategory);
 
-    
+
+  // Add this function to handle resume download
+  const handleDownloadResume = () => {
+    // Path to your resume file in the public folder
+    const resumeUrl = '/src/assets/Resume.pdf'; // or '../assets/resume.pdf' if it's in src/assets
+
+    // Create an anchor element
+    const link = document.createElement('a');
+    link.href = resumeUrl;
+
+    // This suggests the filename for the download
+    link.download = 'Afjal_Hossain_Resume.pdf';
+
+    // Append to the DOM, trigger click, then remove
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
 
   return (
     <section id="skills" className="bg-gradient-to-br from-[#0a192f] to-[#0d2b50] text-gray-300 py-20 px-4">
@@ -70,7 +88,7 @@ const Skillstwo = () => {
         </motion.p>
 
         {/* Category Filter Buttons */}
-        <motion.div 
+        <motion.div
           className="flex flex-wrap justify-center gap-3 mb-12"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -155,8 +173,8 @@ const Skillstwo = () => {
                         strokeDasharray={circumference}
                         initial={{ strokeDashoffset: circumference }}
                         whileInView={{ strokeDashoffset }}
-                        transition={{ 
-                          duration: 1.5, 
+                        transition={{
+                          duration: 1.5,
                           ease: 'easeInOut',
                           delay: 0.2 + (index * 0.04)
                         }}
@@ -168,7 +186,7 @@ const Skillstwo = () => {
                   {/* Skill Name & Percentage */}
                   <div className="flex justify-center items-center gap-3 w-full px-1">
                     <h3 className="text-lg font-semibold">{skill.name}</h3>
-                    
+
                   </div>
 
                   {/* Progress Bar for Small Screens */}

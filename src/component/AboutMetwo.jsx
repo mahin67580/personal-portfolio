@@ -158,7 +158,7 @@ const AboutMetwo = () => {
             viewport={{ once: true, margin: "0px 0px -50px 0px" }}
             variants={fadeRight}
           >
-            <h3 className="text-2xl font-bold text-teal-400">MERN Stack Web Developer</h3>
+            <h3 className="text-2xl text-center lg:text-start font-bold text-teal-400">MERN Stack Web Developer</h3>
 
             <p className='text-lg leading-relaxed text-center lg:text-justify '>
               👋 I'm <strong>Afjal Hossain</strong>, a <strong>Computer Science & Engineering graduate</strong> from
