@@ -72,7 +72,7 @@ const PortfolioChatbot = () => {
         }
 
         // Education
-        if (/education|degree|study|university|college/.test(lowerInput)) {
+        if (/education|degree|study|university|background|college/.test(lowerInput)) {
             return ' I earned my Bachelors degree in Computer Science & Engineering (BSc in CSE) from Bangladesh Army International University of Science & Technology (BAIUST). You can find more details in the Education section of my portfolio.';
         }
 
@@ -107,12 +107,17 @@ I find that my musical creativity often complements my problem-solving skills in
         if (/where|location|based|city|country/.test(lowerInput)) {
             return 'I\'m currently based in Bangladesh. And i am open to remote work/relocation if applicable.';
         }
+        //me
+        if (/afjal|afzal|hosssain|hossain|mahin/.test(lowerInput)) {
+            return "Afjal Hossain is a passionate full-stack web developer specializing in the MERN stack (MongoDB, Express.js, React, Node.js). He has experience building dynamic web applications, integrating APIs, managing databases, and implementing modern UI/UX using Tailwind CSS, DaisyUI, Mamba UI, HyperUI, and Framer Motion. Afjal is open to remote opportunities and relocation.";
+        }
+
         // Skills
         if (/skill|tech|technology|stack|expertise|specialized|speciality|specialty/.test(lowerInput)) {
 
             return (
                 <div >
-                    <p>My technical skills include:\n- Frontend: React, JavaScript, HTML5, CSS3, Redux\n- Backend: Node.js, Express, MongoDB\n- Tools: Git, Firebase\n- Also familiar with Python and Typescript. Visual representation of my skills: <Link to={'/tech-skill'}><button
+                    <p>My technical skills include:- Frontend: React, JavaScript, HTML5, CSS3, Redux- Backend: Node.js, Express, MongoDB- Tools: Git, Firebase - Also familiar with Python and Typescript. Visual representation of my skills: <Link to={'/tech-skill'}><button
                         className='btn font-bold text-[#0077b6] hover:text-[#005f92]   underline-offset-4 hover:underline transition-all duration-200 cursor-pointer flex items-center gap-1'
                     >
                         Tech-Skill

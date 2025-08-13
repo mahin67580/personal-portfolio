@@ -45,27 +45,11 @@ const Skillstwo = () => {
     : skills.filter(skill => skill.category === activeCategory);
 
 
-  // Add this function to handle resume download
-  const handleDownloadResume = () => {
-    // Path to your resume file in the public folder
-    const resumeUrl = '/src/assets/Resume.pdf'; // or '../assets/resume.pdf' if it's in src/assets
 
-    // Create an anchor element
-    const link = document.createElement('a');
-    link.href = resumeUrl;
-
-    // This suggests the filename for the download
-    link.download = 'Afjal_Hossain_Resume.pdf';
-
-    // Append to the DOM, trigger click, then remove
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
 
 
   return (
-    <section id="skills" className="bg-gradient-to-br from-[#0a192f] to-[#0d2b50] text-gray-300 py-20 px-4">
+    <section id="skills" className="bg-gradient-to-br from-[#0a192f] to-[#0d2b50] text-gray-300 py-20  ">
       <div className="container mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: -30 }}
@@ -121,7 +105,7 @@ const Skillstwo = () => {
           </button>
         </motion.div>
 
-        <div className=" flex flex-wrap justify-around items-center  gap-5   ">
+        <div className=" flex flex-wrap justify-center items-center  gap-3   ">
           {filteredSkills.map((skill, index) => {
             const strokeDashoffset = circumference - (circumference * skill.percentage) / 100;
 

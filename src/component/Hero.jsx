@@ -26,7 +26,7 @@ const Hero = () => {
     // Add this function to handle resume download
     const handleDownloadResume = () => {
         // Path to your resume file in the public folder
-        const resumeUrl = '/src/assets/Resume.pdf'; // or '../assets/resume.pdf' if it's in src/assets
+        const resumeUrl = '/public/Resume.pdf'; // or '../assets/resume.pdf' if it's in src/assets
 
         // Create an anchor element
         const link = document.createElement('a');
@@ -248,7 +248,7 @@ const Hero = () => {
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                             >
-                                <FiDownload /> Get Resume
+                                <FiDownload /> <button>Get Resume</button>
                             </motion.a>
 
                             <div className="flex items-center gap-3">

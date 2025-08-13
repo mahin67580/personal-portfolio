@@ -8,7 +8,6 @@ import Skillstwo from '../component/Skillstwo';
 import SpecialSkillstwo from '../component/SpecialSkillstwo';
 import Contacttwo from '../component/Contacttwo';
 import Education from '../component/Education';
-import Chatbot from '../Chatbot';
 import PortfolioChatbot from '../PortfolioChatbot';
  
 
