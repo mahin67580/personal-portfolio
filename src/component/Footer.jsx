@@ -50,7 +50,7 @@ const Footer = () => {
             <h3 className="text-xl font-bold text-white mb-4">Connect</h3>
             <div className="flex gap-4">
               <a 
-                href="https://www.linkedin.com/in/afjalhossain-linkdin/" 
+                href="https://www.linkedin.com/in/afjal-hossain-webdev/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-2xl text-gray-400 hover:text-[#0A66C2] transition-colors"

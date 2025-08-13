@@ -8,6 +8,9 @@ import Skillstwo from '../component/Skillstwo';
 import SpecialSkillstwo from '../component/SpecialSkillstwo';
 import Contacttwo from '../component/Contacttwo';
 import Education from '../component/Education';
+import Chatbot from '../Chatbot';
+import PortfolioChatbot from '../PortfolioChatbot';
+ 
 
 
 const Home = () => {
@@ -18,6 +21,7 @@ const Home = () => {
     return (
         <div>
             <Hero></Hero>
+            <PortfolioChatbot></PortfolioChatbot>
             <AboutMetwo></AboutMetwo>
             <Skillstwo></Skillstwo>
             <Education></Education>
