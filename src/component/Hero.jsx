@@ -24,22 +24,7 @@ const Hero = () => {
     const videoId = '9I4KBr_nLWc';
 
     // Add this function to handle resume download
-    const handleDownloadResume = () => {
-        // Path to your resume file in the public folder
-        const resumeUrl = '/public/Resume.pdf'; // or '../assets/resume.pdf' if it's in src/assets
-
-        // Create an anchor element
-        const link = document.createElement('a');
-        link.href = resumeUrl;
-
-        // This suggests the filename for the download
-        link.download = 'Afjal_Hossain_Resume.pdf';
-
-        // Append to the DOM, trigger click, then remove
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    };
+    
 
     // Animation variants
     const containerVariants = {
@@ -243,12 +228,12 @@ const Hero = () => {
                             variants={itemVariants}
                         >
                             <motion.a
-                                onClick={handleDownloadResume}
+
                                 className="inline-flex items-center gap-2 border-2 border-teal-400 text-teal-400 hover:bg-teal-400 hover:text-[#0a192f] font-medium px-6 py-3 rounded-lg transition-colors"
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                             >
-                                <FiDownload /> <button>Get Resume</button>
+                                <FiDownload /> <button><a href='https://drive.google.com/file/d/1sexZ9Rb6ooBQCNgwXLS2sBsWbNBBrj55/view?usp=sharing' target='_blank'>Get Resume </a></button>
                             </motion.a>
 
                             <div className="flex items-center gap-3">

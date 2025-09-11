@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Fade, Slide } from 'react-awesome-reveal';
 import { FiGithub, FiExternalLink, FiInfo } from 'react-icons/fi';
 import { FaReact, FaNodeJs, FaDatabase } from 'react-icons/fa';
-import { SiFirebase } from "react-icons/si";
+import { SiFirebase, SiStripe } from "react-icons/si";
 import { SiMongodb, SiTailwindcss, SiExpress } from 'react-icons/si';
 import Modal from './Modal';
 
@@ -19,10 +19,14 @@ import project12 from '../assets/projecti_amge/Screenshot (12).png';
 import project13 from '../assets/projecti_amge/Screenshot (13).png';
 import project14 from '../assets/projecti_amge/Screenshot (14).png';
 import project15 from '../assets/projecti_amge/Screenshot (15).png';
-import law1 from '../assets/projecti_amge/law1.png';
-import law2 from '../assets/projecti_amge/law2.png';
-import law3 from '../assets/projecti_amge/law3.png';
-import law4 from '../assets/projecti_amge/law4.png';
+import medisnap1 from '../assets/projecti_amge/medisnap1.png';
+import medisnap2 from '../assets/projecti_amge/medisnap2.png';
+import medisnap3 from '../assets/projecti_amge/medisnap3.png';
+import medisnap14 from '../assets/projecti_amge/medisnap14.png';
+import medisnap16 from '../assets/projecti_amge/medisnap16.png';
+import medisnap17 from '../assets/projecti_amge/medisnap17.png';
+import medisnap110 from '../assets/projecti_amge/medisnap110.png';
+import medisnap111 from '../assets/projecti_amge/medisnap111.png';
 
 const Projectstwo = () => {
     // Track active image index for each project separately
@@ -32,6 +36,32 @@ const Projectstwo = () => {
 
     // Sample project data
     const projects = [
+        {
+    title: "Medical Camp Management System",
+    description: "A full-stack web app for managing medical camps, enabling organizers to create camps, handle registrations, process payments, and track analytics.",
+    features: [
+        "Authentication with Firebase (Email/Google Sign-In)",
+        "Create, Browse, Update, and Delete Medical Camps",
+        "Camp Registration and Management with secure Stripe payments",
+        "Interactive Dashboard with analytics and charts for admins and organizers",
+        "Role-based access control (Admin, Organizer, Participant)",
+        "Advanced filtering and search by location, specialty, and date",
+         
+    ],
+    technologies: [
+        { icon: <FaReact className="text-blue-400" />, name: "React" },
+        { icon: <FaNodeJs className="text-green-500" />, name: "Node.js" },
+        { icon: <SiExpress className="text-gray-400" />, name: "Express" },
+        { icon: <SiMongodb className="text-green-600" />, name: "MongoDB" },
+        { icon: <SiFirebase className="text-yellow-400" />, name: "Firebase" },
+        { icon: <SiStripe className="text-purple-500" />, name: "Stripe" },
+        { icon: <SiTailwindcss className="text-cyan-400" />, name: "Tailwind CSS" }
+    ],
+    images: [medisnap1, medisnap2, medisnap3, medisnap14, medisnap16, medisnap17, medisnap110, medisnap111],
+    liveLink: "https://medical-camp-auth.web.app/",
+    githubLink: "https://github.com/mahin67580/medical-camp-management"
+},
+       
         {
             title: "Roommate Finder Website",
             description: "A full-stack web application to help users find compatible roommates based on location, budget, lifestyle, and interests. Includes dashboard analytics, advanced search, and protected user features.",
@@ -55,30 +85,7 @@ const Projectstwo = () => {
             liveLink: "https://roommate-app-a4ed0.web.app/",
             githubLink: "https://github.com/mahin67580/roommate-finder-app-frontend"
         },
-        {
-            title: "Lawer of BD",
-            description: "A modern MERN stack web application for connecting users with legal professionals in Bangladesh. Features searchable lawyer profiles, category filters, and secure authentication.",
-            features: [
-                "Searchable lawyer directory with profile details",
-                "Contact and consultation booking options",
-                "Legal category filters for better navigation",
-                "Authentication and protected routes",
-                "Responsive design with Tailwind CSS",
-                "Fast performance with React and Node.js"
-            ],
-            technologies: [
-                { icon: <FaReact className="text-blue-400" />, name: "React" },
-                { icon: <FaNodeJs className="text-green-500" />, name: "Node.js" },
-                { icon: <SiMongodb className="text-green-600" />, name: "MongoDB" },
-                { icon: <SiExpress className="text-gray-400" />, name: "Express" },
-                { icon: <SiTailwindcss className="text-cyan-400" />, name: "Tailwind CSS" }
-                // If you used Firebase Auth:
-                // { icon: <SiFirebase className="text-yellow-400" />, name: "Firebase" }
-            ],
-            images: [law1, law2, law3, law4],
-            liveLink: "https://kaleidoscopic-tanuki-87c99a.netlify.app/",
-            githubLink: "#" // Add your GitHub repo link here if available
-        },
+       
         {
             title: "WhereIsIt - Lost & Found Web App",
             description: "A full-stack platform that connects users who have lost items with those who’ve found them. Features secure authentication, item recovery workflows, and dynamic UI components.",
