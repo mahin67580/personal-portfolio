@@ -21,6 +21,7 @@ const skills = [
   { name: 'CSS3', percentage: 100, icon: css, color: '#264DE4', category: 'frontend' },
   { name: 'JavaScript', percentage: 100, icon: JavaScript, color: '#F7DF1E', category: 'backend' },
   { name: 'React', percentage: 100, icon: Reactimg, color: '#61DAFB', category: 'frontend' },
+  { name: 'Next.js', percentage: 100, icon: Reactimg, color: '#61DAFB', category: 'frontend' },
   { name: 'Node.js', percentage: 100, icon: Node, color: '#68A063', category: 'backend' },
   { name: 'MongoDB', percentage: 100, icon: MongoDB, color: '#4DB33D', category: 'backend' },
   { name: 'Firebase', percentage: 100, icon: Firebase, color: '#FFCA28', category: 'backend' },

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Fade, Slide } from 'react-awesome-reveal';
 import { FiGithub, FiExternalLink, FiInfo } from 'react-icons/fi';
 import { FaReact, FaNodeJs, FaDatabase } from 'react-icons/fa';
-import { SiFirebase, SiStripe } from "react-icons/si";
+import { SiCloudinary, SiFirebase, SiGooglemaps, SiI18Next, SiNextdotjs, SiStripe, SiVercel } from "react-icons/si";
 import { SiMongodb, SiTailwindcss, SiExpress } from 'react-icons/si';
 import Modal from './Modal';
 
@@ -28,6 +28,26 @@ import medisnap17 from '../assets/projecti_amge/medisnap17.png';
 import medisnap110 from '../assets/projecti_amge/medisnap110.png';
 import medisnap111 from '../assets/projecti_amge/medisnap111.png';
 
+import m1 from '../assets/projecti_amge/m1.PNG';
+import m2 from '../assets/projecti_amge/m2.PNG';
+import m3 from '../assets/projecti_amge/m3.PNG';
+import m4 from '../assets/projecti_amge/m4.PNG';
+import m5 from '../assets/projecti_amge/m5.PNG';
+import m7 from '../assets/projecti_amge/m7.PNG';
+import m8 from '../assets/projecti_amge/m8.PNG';
+import m9 from '../assets/projecti_amge/m9.PNG';
+
+import f1 from '../assets/projecti_amge/f1.PNG';
+import f2 from '../assets/projecti_amge/f2.PNG';
+import f3 from '../assets/projecti_amge/f3.PNG';
+import f4 from '../assets/projecti_amge/f4.PNG';
+import f5 from '../assets/projecti_amge/f5.PNG';
+import f6 from '../assets/projecti_amge/f6.PNG';
+import f7 from '../assets/projecti_amge/f7.PNG';
+import f9 from '../assets/projecti_amge/f9.PNG';
+import f10 from '../assets/projecti_amge/f10.PNG';
+ 
+
 const Projectstwo = () => {
     // Track active image index for each project separately
     const [activeImageIndices, setActiveImageIndices] = useState({});
@@ -36,32 +56,89 @@ const Projectstwo = () => {
 
     // Sample project data
     const projects = [
+
+
         {
-    title: "Medical Camp Management System",
-    description: "A full-stack web app for managing medical camps, enabling organizers to create camps, handle registrations, process payments, and track analytics.",
-    features: [
-        "Authentication with Firebase (Email/Google Sign-In)",
-        "Create, Browse, Update, and Delete Medical Camps",
-        "Camp Registration and Management with secure Stripe payments",
-        "Interactive Dashboard with analytics and charts for admins and organizers",
-        "Role-based access control (Admin, Organizer, Participant)",
-        "Advanced filtering and search by location, specialty, and date",
-         
-    ],
-    technologies: [
-        { icon: <FaReact className="text-blue-400" />, name: "React" },
-        { icon: <FaNodeJs className="text-green-500" />, name: "Node.js" },
-        { icon: <SiExpress className="text-gray-400" />, name: "Express" },
-        { icon: <SiMongodb className="text-green-600" />, name: "MongoDB" },
-        { icon: <SiFirebase className="text-yellow-400" />, name: "Firebase" },
-        { icon: <SiStripe className="text-purple-500" />, name: "Stripe" },
-        { icon: <SiTailwindcss className="text-cyan-400" />, name: "Tailwind CSS" }
-    ],
-    images: [medisnap1, medisnap2, medisnap3, medisnap14, medisnap16, medisnap17, medisnap110, medisnap111],
-    liveLink: "https://medical-camp-auth.web.app/",
-    githubLink: "https://github.com/mahin67580/medical-camp-management"
-},
-       
+            title: "Melodic Mutants - Music Learning Platform",
+            description: "A comprehensive full-stack music education platform built with Next.js that connects students, instructors, and admins for interactive online learning, secure payments, and real-time progress tracking.",
+            features: [
+                "Full-Stack Course Management with multimedia lessons and progress tracking",
+                "Secure authentication with NextAuth.js (Email & OAuth providers)",
+                "Stripe integration for course payments and private lesson bookings",
+                "Role-based dashboards for Students, Instructors, and Admins",
+                "Automatic certificate generation upon course completion",
+                "Interactive music tools including Chord Finder, Scale Explorer, and Metronome",
+                "Admin panel for user management, analytics, and content moderation"
+            ],
+            technologies: [
+                { icon: <SiNextdotjs className="text-gray-200" />, name: "Next.js" },
+                { icon: <FaReact className="text-blue-400" />, name: "React" },
+                { icon: <SiMongodb className="text-green-600" />, name: "MongoDB" },
+                { icon: <SiTailwindcss className="text-cyan-400" />, name: "Tailwind CSS" },
+                { icon: <SiStripe className="text-purple-500" />, name: "Stripe" },
+                { icon: <SiCloudinary className="text-blue-300" />, name: "Cloudinary" },
+                { icon: <SiI18Next className="text-orange-400" />, name: "NextAuth.js" },
+                { icon: <SiVercel className="text-white" />, name: "Vercel" },
+
+            ],
+            images: [m1, m2, m3, m4, m5, m7, m8, m9],
+            liveLink: "https://melodic-mutants-bd.vercel.app/",
+            githubLink: "https://github.com/mahin67580/MELODIC_MUTANTS_BD"
+        },
+        {
+            title: "FoodieFrog - Food Delivery Platform",
+            description: "A modern full-stack food delivery platform built with Next.js 15 featuring multi-vendor support, secure payments, and comprehensive restaurant management systems for customers and business owners.",
+            features: [
+                "Multi-role platform for Customers, Restaurants, and Admins",
+                "Secure authentication with NextAuth.js (Email & OAuth providers)",
+                "Stripe integration for secure payment processing and order management",
+                "Smart shopping cart with real-time calculations and item management",
+                "Restaurant dashboard for menu management and order processing",
+                "Advanced filtering and search for restaurant and food discovery",
+                "Order history tracking and user profile management",
+                "Responsive design with modern UI/UX and dark mode support"
+            ],
+            technologies: [
+                { icon: <SiNextdotjs className="text-gray-200" />, name: "Next.js 15" },
+                { icon: <FaReact className="text-blue-400" />, name: "React 19" },
+                { icon: <SiMongodb className="text-green-600" />, name: "MongoDB" },
+                { icon: <SiTailwindcss className="text-cyan-400" />, name: "Tailwind CSS" },
+                { icon: <SiStripe className="text-purple-500" />, name: "Stripe" },
+                { icon: <SiCloudinary className="text-blue-300" />, name: "Cloudinary" },
+                { icon: <SiI18Next className="text-orange-400" />, name: "NextAuth.js" },
+                { icon: <SiGooglemaps className="text-red-500" />, name: "Google Maps API" }
+            ],
+            images: [f1,f2,f3,f4,f5,f6,f7,f9,f10],
+            liveLink: "https://foodie-frog.vercel.app/",
+            githubLink: "https://github.com/mahin67580/FoodieFrog"
+        },
+
+        {
+            title: "Medical Camp Management System",
+            description: "A full-stack web app for managing medical camps, enabling organizers to create camps, handle registrations, process payments, and track analytics.",
+            features: [
+                "Authentication with Firebase (Email/Google Sign-In)",
+                "Create, Browse, Update, and Delete Medical Camps",
+                "Camp Registration and Management with secure Stripe payments",
+                "Interactive Dashboard with analytics and charts for admins and organizers",
+                "Role-based access control (Admin, Organizer, Participant)",
+                "Advanced filtering and search by location, specialty, and date",
+
+            ],
+            technologies: [
+                { icon: <FaReact className="text-blue-400" />, name: "React" },
+                { icon: <FaNodeJs className="text-green-500" />, name: "Node.js" },
+                { icon: <SiExpress className="text-gray-400" />, name: "Express" },
+                { icon: <SiMongodb className="text-green-600" />, name: "MongoDB" },
+                { icon: <SiFirebase className="text-yellow-400" />, name: "Firebase" },
+                { icon: <SiStripe className="text-purple-500" />, name: "Stripe" },
+                { icon: <SiTailwindcss className="text-cyan-400" />, name: "Tailwind CSS" }
+            ],
+            images: [medisnap1, medisnap2, medisnap3, medisnap14, medisnap16, medisnap17, medisnap110, medisnap111],
+            liveLink: "https://medical-camp-auth.web.app/",
+            githubLink: "https://github.com/mahin67580/medical-camp-management"
+        },
+
         {
             title: "Roommate Finder Website",
             description: "A full-stack web application to help users find compatible roommates based on location, budget, lifestyle, and interests. Includes dashboard analytics, advanced search, and protected user features.",
@@ -85,7 +162,7 @@ const Projectstwo = () => {
             liveLink: "https://roommate-app-a4ed0.web.app/",
             githubLink: "https://github.com/mahin67580/roommate-finder-app-frontend"
         },
-       
+
         {
             title: "WhereIsIt - Lost & Found Web App",
             description: "A full-stack platform that connects users who have lost items with those who’ve found them. Features secure authentication, item recovery workflows, and dynamic UI components.",
@@ -108,7 +185,10 @@ const Projectstwo = () => {
             images: [project12, project13, project14, project15],
             liveLink: "https://lost-and-found-da620.web.app/",
             githubLink: "https://github.com/Programming-Hero-Web-Course4/b11a11-client-side-mahin67580"
-        }
+        },
+
+
+
     ];
 
     // Initialize activeImageIndices if empty
@@ -166,8 +246,8 @@ const Projectstwo = () => {
                                             className="w-full h-auto object-cover transition-transform duration-500 hover:scale-105"
                                         />
                                     </div> */}
-                                    <div className="overflow-hidden rounded-xl shadow-2xl border-2 border-[#1e3a8a]/30
-                                     lg:w-[900px] lg:h-[570px] laptop-large relative">
+                                    <div className="overflow-hidden rounded-xl shadow-2xl  
+                                     lg:w-[900px] lg:h-[570px] laptop-large relative  ">
                                         <div
                                             className="flex transition-transform duration-700 ease-in-out h-full"
                                             style={{
@@ -180,7 +260,7 @@ const Projectstwo = () => {
                                                     key={i}
                                                     src={img}
                                                     alt={`${project.title} ${i}`}
-                                                    className="min-w-full h-full object-cover flex-shrink-0"
+                                                    className="min-w-full h-full object-contain flex-shrink-0"
                                                 />
                                             ))}
                                         </div>

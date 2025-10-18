@@ -9,6 +9,7 @@ import SpecialSkillstwo from '../component/SpecialSkillstwo';
 import Contacttwo from '../component/Contacttwo';
 import Education from '../component/Education';
 import PortfolioChatbot from '../PortfolioChatbot';
+import Certificate from '../component/Certificate';
  
 
 
@@ -24,6 +25,7 @@ const Home = () => {
             <AboutMetwo></AboutMetwo>
             <Skillstwo></Skillstwo>
             <Education></Education>
+            <Certificate></Certificate>
             <Projectstwo></Projectstwo>
             <SpecialSkillstwo></SpecialSkillstwo>
             <Servicestwo></Servicestwo>

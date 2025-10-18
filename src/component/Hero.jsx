@@ -24,7 +24,7 @@ const Hero = () => {
     const videoId = '9I4KBr_nLWc';
 
     // Add this function to handle resume download
-    
+
 
     // Animation variants
     const containerVariants = {
